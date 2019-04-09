@@ -9,10 +9,18 @@
 import Foundation
 import EosioSwift
 
+/// EllipticCurveType enum defines the two ECC's currently supported
 public enum EllipticCurveType: String {
     case r1 = "R1" // swiftlint:disable:this identifier_name
     case k1 = "K1" // swiftlint:disable:this identifier_name
 
+    /**
+     Init an EllipticCurveType
+     
+     - Parameters:
+     - curve: A String defining the curve type of the enum
+     
+     */
     public init(_ curve: String) throws {
         switch curve.uppercased() {
         case "R1":

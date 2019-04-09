@@ -10,18 +10,22 @@ import Foundation
 import EosioSwift
 import openssl
 
+/// Utilities for recovering supported ECC keys
 public class EccRecoverKey {
 
+    // Default init
     public init() {
 
     }
 
-    /// Recover a public key from the private key
-    ///
-    /// - Parameters:
-    ///   - privateKey: The private key
-    ///   - curve: The curve `K1` or `R1`
-    /// - Returns: The public key
+    /**
+       Recover a public key from the private key
+    
+       - Parameters:
+        - privateKey: The private key
+        - curve: The curve `K1` or `R1`
+       - Returns: The public key
+    */
     public class func recoverPublicKey(privateKey: Data, curve: EllipticCurveType) throws -> Data {
 
         let privKeyBN = BN_new()!
@@ -59,14 +63,16 @@ public class EccRecoverKey {
         return try Data(hex: recoveredPubKeyHex)
     }
 
-    /// Recover a public key from a signature, message
-    ///
-    /// - Parameters:
-    ///   - signatureDer: The signature in der format
-    ///   - message: The message
-    ///   - recid: The recovery id (0-3)
-    ///   - curve: The curve `K1` or `R1`
-    /// - Returns: The public key
+    /**
+       Recover a public key from a signature, message
+    
+        - Parameters:
+         - signatureDer: The signature in der format
+         - message: The message
+         - recid: The recovery id (0-3)
+         - curve: The curve `K1` or `R1`
+        - Returns: The public key
+    */
     public class func recoverPublicKey(signatureDer: Data, message: Data, recid: Int, curve: EllipticCurveType = .r1) throws -> Data {
 
         var curveName: Int32
@@ -106,16 +112,18 @@ public class EccRecoverKey {
         return try Data(hex: recoveredPubKeyHex)
     }
 
-    /// Get the recovery id (recid) for a signature, message and target public key
-    ///
-    /// - Parameters:
-    ///   - signatureDer: The signature in der format
-    ///   - message: The message
-    ///   - targetPublicKey: The target public key
-    ///   - curve: The curve `K1` or `R1`
-    /// - Returns: The recovery id (0-3)
-    /// - Throws: If none of the possible recids recover the target public key
-    public class func recid(signatureDer: Data, message: Data, targetPublicKey: Data, curve: EllipticCurveType = .r1) throws -> Int {
+    /**
+        Get the recovery id (recid) for a signature, message and target public key
+ 
+        - Parameters:
+          - signatureDer: The signature in der format
+          - message: The message
+          - targetPublicKey: The target public key
+          - curve: The curve `K1` or `R1`
+        - Returns: The recovery id (0-3)
+        - Throws: If none of the possible recids recover the target public key
+    */
+ public class func recid(signatureDer: Data, message: Data, targetPublicKey: Data, curve: EllipticCurveType = .r1) throws -> Int {
         for i in 0...3 {
             let recoveredPublicKey = try recoverPublicKey(signatureDer: signatureDer, message: message, recid: i, curve: curve)
             if recoveredPublicKey == targetPublicKey {

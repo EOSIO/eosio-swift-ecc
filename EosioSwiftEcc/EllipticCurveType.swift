@@ -17,9 +17,7 @@ public enum EllipticCurveType: String {
     /**
      Init an EllipticCurveType
      
-     - Parameters:
-     - curve: A String defining the curve type of the enum
-     
+     - Parameter curve: A String defining the curve type of the enum
      */
     public init(_ curve: String) throws {
         switch curve.uppercased() {

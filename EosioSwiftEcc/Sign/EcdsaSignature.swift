@@ -25,14 +25,14 @@ public struct EcdsaSignature {
         der = der + s
         return der
     }
-
+    
     /**
         Init an EcdsaSignature
-    
-        - Parameters:
-          - der: A signature in der format
-          - requireLowS: Option to convert a high `s` to low `s`
-          - curve: The curve (`R1` or `K1`)
+     
+         - Parameters:
+           - der: A signature in der format
+           - requireLowS: Option to convert a high `s` to low `s`
+           - curve: The curve (`R1` or `K1`)
     */
     public init?(der: Data?, requireLowS: Bool = true, curve: EllipticCurveType = .r1) { // swiftlint:disable:this cyclomatic_complexity
         guard let der = der else { return nil }
@@ -73,8 +73,8 @@ public struct EcdsaSignature {
      Init an EcdsaSignature
      
      - Parameters:
-     - r: A r curve data format
-     - s: A s curve data format
+       - r: A r curve data format
+       - s: A s curve data format
      */
     public init(r: Data, s: Data) {
         self.r = r

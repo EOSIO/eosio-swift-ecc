@@ -15,7 +15,6 @@ import openssl
 public class EosioEccSign {
 
     static let k1SignMaxAttempts = 100
-    
     /**
      Sign data with a K1 key for validation on an eosio chain.
      
@@ -24,9 +23,9 @@ public class EosioEccSign {
        - privateKey: The private key used to sign.
        - data: The data to sign.
      
-     - Returns: A signature (header byte + r + s)
+     - Returns: A signature (header byte + r + s).
      
-     - Throws: If the data cannot be signed or the public key cannot be recovered, or another error is encountered
+     - Throws: If the data cannot be signed or the public key cannot be recovered, or another error is encountered.
      */
     public class func signWithK1(publicKey: Data, privateKey: Data, data: Data) throws -> Data { // swiftlint:disable:this function_body_length
         let privKeyBN = BN_new()!

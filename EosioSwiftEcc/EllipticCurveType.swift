@@ -13,7 +13,7 @@ import EosioSwift
 public enum EllipticCurveType: String {
     /// A R1 curve type
     case r1 = "R1" // swiftlint:disable:this identifier_name
-    /// A R1 curve type
+    /// A K1 curve type
     case k1 = "K1" // swiftlint:disable:this identifier_name
 
     /**

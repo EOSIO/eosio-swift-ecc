@@ -13,17 +13,17 @@ import openssl
 /// Utilities for recovering supported ECC keys
 public class EccRecoverKey {
 
-    // Default init
+    /// Default init.
     public init() {
 
     }
 
     /**
-       Recover a public key from the private key
+       Recover a public key from the private key.
     
        - Parameters:
-         - privateKey: The private key
-         - curve: The curve `K1` or `R1`
+         - privateKey: The private key.
+         - curve: The curve `K1` or `R1`.
      
        - Returns: The public key
     */
@@ -65,15 +65,17 @@ public class EccRecoverKey {
     }
 
     /**
-       Recover a public key from a signature, message
+       Recover a public key from a signature, message.
     
         - Parameters:
-          - signatureDer: The signature in der format
-          - message: The message
-          - recid: The recovery id (0-3)
-          - curve: The curve `K1` or `R1`
+          - signatureDer: The signature in der format.
+          - message: The message.
+          - recid: The recovery id (0-3).
+          - curve: The curve `K1` or `R1`.
      
-        - Returns: The public key
+        - Returns: The public key.
+     
+        - Throws: If unable to recover the target public key.
     */
     public class func recoverPublicKey(signatureDer: Data, message: Data, recid: Int, curve: EllipticCurveType = .r1) throws -> Data {
 
@@ -115,17 +117,17 @@ public class EccRecoverKey {
     }
 
     /**
-        Get the recovery id (recid) for a signature, message and target public key
+        Get the recovery id (recid) for a signature, message and target public key.
  
         - Parameters:
-          - signatureDer: The signature in der format
-          - message: The message
-          - targetPublicKey: The target public key
-          - curve: The curve `K1` or `R1`
+          - signatureDer: The signature in der format.
+          - message: The message.
+          - targetPublicKey: The target public key.
+          - curve: The curve `K1` or `R1`.
      
-        - Returns: The recovery id (0-3)
+        - Returns: The recovery id (0-3).
      
-        - Throws: If none of the possible recids recover the target public key
+        - Throws: If none of the possible recids recover the target public key.
     */
  public class func recid(signatureDer: Data, message: Data, targetPublicKey: Data, curve: EllipticCurveType = .r1) throws -> Int {
         for i in 0...3 {

@@ -4,4 +4,5 @@ xcode_scheme: EosioSwiftEccTests
 osx_image: xcode10.2
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X
 before_install:
+- pod repo update
 - pod install

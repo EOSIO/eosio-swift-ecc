@@ -18,6 +18,7 @@
 		28AF06E3223166A700EB0463 /* recover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28AF06E1223166A700EB0463 /* recover.cpp */; };
 		28AF06E4223166A700EB0463 /* recover.h in Headers */ = {isa = PBXBuildFile; fileRef = 28AF06E2223166A700EB0463 /* recover.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		682A8A7085AB4DAA8FDDC4A8 /* Pods_EosioSwiftEccTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224D84CA70E1B57E4EAB5A9E /* Pods_EosioSwiftEccTests.framework */; };
+		B4B1583E248219EC0002B97E /* EosioSwiftRecoverKeysNoOpenSSLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B1583D248219EC0002B97E /* EosioSwiftRecoverKeysNoOpenSSLTests.swift */; };
 		B5E77A06536378074B751A8A /* Pods_EosioSwiftEcc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ED742EACE49E1E18A2B39C /* Pods_EosioSwiftEcc.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		28678782224BD16700343976 /* EllipticCurveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipticCurveType.swift; sourceTree = "<group>"; };
 		28AF06E1223166A700EB0463 /* recover.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = recover.cpp; sourceTree = "<group>"; };
 		28AF06E2223166A700EB0463 /* recover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = recover.h; sourceTree = "<group>"; };
+		B4B1583D248219EC0002B97E /* EosioSwiftRecoverKeysNoOpenSSLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EosioSwiftRecoverKeysNoOpenSSLTests.swift; sourceTree = "<group>"; };
 		B841B0B75E42C0180581A650 /* Pods-EosioSwiftEccTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EosioSwiftEccTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EosioSwiftEccTests/Pods-EosioSwiftEccTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB9EB879E3C19A9F6FA26F6E /* Pods-EosioSwiftEcc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EosioSwiftEcc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EosioSwiftEcc/Pods-EosioSwiftEcc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 				2811B4E02231A2F80029BF6A /* EosioSwiftEccRecoverKeyTests.swift */,
 				28331116223301E3001EFDDA /* EosioSwiftEccSignTests.swift */,
 				2811D02E2230814B0002E580 /* Info.plist */,
+				B4B1583D248219EC0002B97E /* EosioSwiftRecoverKeysNoOpenSSLTests.swift */,
 			);
 			path = EosioSwiftEccTests;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			files = (
 				28331117223301E3001EFDDA /* EosioSwiftEccSignTests.swift in Sources */,
 				2811B4E12231A2F80029BF6A /* EosioSwiftEccRecoverKeyTests.swift in Sources */,
+				B4B1583E248219EC0002B97E /* EosioSwiftRecoverKeysNoOpenSSLTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 
 import Foundation
 import EosioSwift
-import openssl
+import Recover
 
 /// Utilities for recovering supported ECC keys.
 public class EccRecoverKey {
@@ -58,8 +58,8 @@ public class EccRecoverKey {
             let yBN = BN_new()!
             EC_POINT_get_affine_coordinates_GFp(group, pubKeyPoint, xBN, yBN, nil)
 
-            let xHexPadded = BNToHexString(bignum: xBN)
-            let yHexPadded = BNToHexString(bignum: yBN)
+            let xHexPadded = pad(hex: String(cString: BN_bn2hex(xBN)!))
+            let yHexPadded = pad(hex: String(cString: BN_bn2hex(yBN)!))
 
             BN_free(xBN)
             BN_free(yBN)
@@ -118,8 +118,8 @@ public class EccRecoverKey {
                 let yBN = BN_new()!
                 let group = EC_GROUP_new_by_curve_name(curveName)
                 EC_POINT_get_affine_coordinates_GFp(group, recoveredPubKey, xBN, yBN, nil)
-                let xHexPadded = BNToHexString(bignum: xBN)
-                let yHexPadded = BNToHexString(bignum: yBN)
+                let xHexPadded = pad(hex: String(cString: BN_bn2hex(xBN)!))
+                let yHexPadded = pad(hex: String(cString: BN_bn2hex(yBN)!))
                 BN_free(xBN)
                 BN_free(yBN)
                 EC_GROUP_free(group)
@@ -131,17 +131,17 @@ public class EccRecoverKey {
         return try Data(hex: recoveredPubKeyHex)
     }
 
-    /// Take a BIGNUM and return the hex string for it, padded out to 64 characters.
+    /// Pad hex string with 0s
     /// - Parameters:
-    ///   - bn: BIGNUM to convert.
-    /// Returns: The 64 count hex string representation of the provided BIGNUM.
-    private class func BNToHexString(bignum: UnsafeMutablePointer<BIGNUM>) -> String {
-        let bnstr = BN_bn2hex(bignum)!
-        let hex = String(cString: bnstr)
-        let pad = max(64, hex.count)
-        let padded = String(repeatElement("0", count: pad - hex.count) + hex)
-        CRYPTO_free(bnstr)
-        return padded
+    ///   - hex: The hex string to pad
+    ///   - size: The desired length of the hex string
+    /// - Returns: A hex string padded with 0s if needed
+    private class func pad(hex: String, size: Int = 64) -> String {
+        var paddedHex = hex
+        while paddedHex.count < size {
+            paddedHex = "0" + paddedHex
+        }
+        return paddedHex
     }
 
  /// Get the recovery id (recid) for a signature, message and target public key.

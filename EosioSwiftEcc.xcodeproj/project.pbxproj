@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,9 @@
 		28331117223301E3001EFDDA /* EosioSwiftEccSignTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28331116223301E3001EFDDA /* EosioSwiftEccSignTests.swift */; };
 		28678783224BD16700343976 /* EllipticCurveType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28678782224BD16700343976 /* EllipticCurveType.swift */; };
 		28AF06E3223166A700EB0463 /* recover.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28AF06E1223166A700EB0463 /* recover.cpp */; };
-		28AF06E4223166A700EB0463 /* recover.h in Headers */ = {isa = PBXBuildFile; fileRef = 28AF06E2223166A700EB0463 /* recover.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28AF06E4223166A700EB0463 /* recover.h in Headers */ = {isa = PBXBuildFile; fileRef = 28AF06E2223166A700EB0463 /* recover.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		28B4DD6524A9108200542045 /* openssl.h in Headers */ = {isa = PBXBuildFile; fileRef = 28B4DD6424A9108200542045 /* openssl.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		28F7197B24ABB84200B99A5D /* openssl in Frameworks */ = {isa = PBXBuildFile; productRef = 28F7197A24ABB84200B99A5D /* openssl */; };
 		682A8A7085AB4DAA8FDDC4A8 /* Pods_EosioSwiftEccTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 224D84CA70E1B57E4EAB5A9E /* Pods_EosioSwiftEccTests.framework */; };
 		B5E77A06536378074B751A8A /* Pods_EosioSwiftEcc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20ED742EACE49E1E18A2B39C /* Pods_EosioSwiftEcc.framework */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,9 @@
 		28678782224BD16700343976 /* EllipticCurveType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EllipticCurveType.swift; sourceTree = "<group>"; };
 		28AF06E1223166A700EB0463 /* recover.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = recover.cpp; sourceTree = "<group>"; };
 		28AF06E2223166A700EB0463 /* recover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = recover.h; sourceTree = "<group>"; };
+		28B4DD6224A9105700542045 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		28B4DD6424A9108200542045 /* openssl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openssl.h; sourceTree = "<group>"; };
+		28EE812024A917CB00194427 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		B841B0B75E42C0180581A650 /* Pods-EosioSwiftEccTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EosioSwiftEccTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EosioSwiftEccTests/Pods-EosioSwiftEccTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB9EB879E3C19A9F6FA26F6E /* Pods-EosioSwiftEcc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EosioSwiftEcc.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EosioSwiftEcc/Pods-EosioSwiftEcc.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E77A06536378074B751A8A /* Pods_EosioSwiftEcc.framework in Frameworks */,
+				28F7197B24ABB84200B99A5D /* openssl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,7 @@
 		2811B4DE22317CC90029BF6A /* Recover */ = {
 			isa = PBXGroup;
 			children = (
+				28EE812024A917CB00194427 /* module.modulemap */,
 				2811B4DC2231679C0029BF6A /* EccRecoverKey.swift */,
 				28AF06E1223166A700EB0463 /* recover.cpp */,
 				28AF06E2223166A700EB0463 /* recover.h */,
@@ -118,6 +125,7 @@
 		2811D0202230814B0002E580 /* EosioSwiftEcc */ = {
 			isa = PBXGroup;
 			children = (
+				28B4DD6324A9105E00542045 /* Openssl */,
 				2811D0212230814B0002E580 /* EosioSwiftEcc.h */,
 				28678782224BD16700343976 /* EllipticCurveType.swift */,
 				2811B4DE22317CC90029BF6A /* Recover */,
@@ -146,6 +154,15 @@
 			path = Sign;
 			sourceTree = "<group>";
 		};
+		28B4DD6324A9105E00542045 /* Openssl */ = {
+			isa = PBXGroup;
+			children = (
+				28B4DD6224A9105700542045 /* module.modulemap */,
+				28B4DD6424A9108200542045 /* openssl.h */,
+			);
+			path = Openssl;
+			sourceTree = "<group>";
+		};
 		79448D659DABF57BC8533F6C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2811D02F2230814B0002E580 /* EosioSwiftEcc.h in Headers */,
+				28B4DD6524A9108200542045 /* openssl.h in Headers */,
 				28AF06E4223166A700EB0463 /* recover.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +204,9 @@
 			dependencies = (
 			);
 			name = EosioSwiftEcc;
+			packageProductDependencies = (
+				28F7197A24ABB84200B99A5D /* openssl */,
+			);
 			productName = EosioSwiftEcc;
 			productReference = 2811D01E2230814B0002E580 /* EosioSwiftEcc.framework */;
 			productType = "com.apple.product-type.framework";
@@ -217,7 +238,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = block.one;
 				TargetAttributes = {
 					2811D01D2230814B0002E580 = {
@@ -238,6 +259,9 @@
 				en,
 			);
 			mainGroup = 2811D0142230814B0002E580;
+			packageReferences = (
+				28F7197924ABB84200B99A5D /* XCRemoteSwiftPackageReference "xc-openssl" */,
+			);
 			productRefGroup = 2811D01F2230814B0002E580 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -405,6 +429,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -417,6 +442,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -431,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -470,6 +496,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -482,6 +509,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -490,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -508,6 +536,7 @@
 			baseConfigurationReference = FB9EB879E3C19A9F6FA26F6E /* Pods-EosioSwiftEcc.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -516,9 +545,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt/BigInt.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift/EosioSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = EosioSwiftEcc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,6 +580,7 @@
 			baseConfigurationReference = 1C0108598E54E41FCDF2169B /* Pods-EosioSwiftEcc.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -547,9 +589,21 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt/BigInt.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift/EosioSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = EosioSwiftEcc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,7 +624,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9574LUMBYJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit\"",
+					"$(PROJECT_DIR)/**",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt/BigInt.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift/EosioSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = EosioSwiftEccTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +658,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9574LUMBYJ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit\"",
+					"$(PROJECT_DIR)/**",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BigInt/BigInt.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EosioSwift/EosioSwift.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromiseKit/PromiseKit.framework/Headers\"",
+					"$(PROJECT_DIR)/**",
+				);
 				INFOPLIST_FILE = EosioSwiftEccTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,6 +717,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		28F7197924ABB84200B99A5D /* XCRemoteSwiftPackageReference "xc-openssl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:Todd-Bowden/xc-openssl.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		28F7197A24ABB84200B99A5D /* openssl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 28F7197924ABB84200B99A5D /* XCRemoteSwiftPackageReference "xc-openssl" */;
+			productName = openssl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2811D0152230814B0002E580 /* Project object */;
 }

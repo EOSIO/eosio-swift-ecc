@@ -5,10 +5,18 @@
 #pragma clang diagnostic ignored "-Weverything"
 
 #include "recover.h"
+//#include <stdbool.h>
+//#include <stddef.h>
+//#include <openssl/ecdsa.h>
+//#include <openssl/bn.h>
 
 namespace {
-    
-    
+
+    typedef struct ECDSA_SIG_st {
+        BIGNUM *r;
+        BIGNUM *s;
+    } ECDSA_SIG;
+
     /**
      * Perform ECDSA key recovery (see SEC1 4.1.6) for curves over (mod p)-fields
      * recid selects which key is recovered

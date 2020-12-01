@@ -1,6 +1,8 @@
 ![Swift Logo](https://github.com/EOSIO/eosio-swift-ecc/raw/master/img/swift-logo.png)
 # EOSIO SDK for Swift: ECC ![EOSIO Alpha](https://img.shields.io/badge/EOSIO-Alpha-blue.svg)
 
+:warning:  **Notice!!  This repository is deprecated and will no longer receive updates.   The functionality previously provided here has been incorporated into [EOSIO SDK for Swift](https://github.com/EOSIO/eosio-swift) in the 1.0.0 release.**
+
 [![Software License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/EOSIO/eosio-swift/blob/master/LICENSE)
 [![Swift 5.0](https://img.shields.io/badge/Language-Swift_5.0-orange.svg)](https://swift.org)
 ![](https://img.shields.io/badge/Deployment%20Target-iOS%2011-blue.svg)
